@@ -32,7 +32,11 @@ class ThemeManager {
 
     updateThemeIcon() {
         if (themeIcon) {
-            themeIcon.textContent = this.currentTheme === 'light' ? '🌙' : '☀️';
+            if (this.currentTheme === 'light') {
+                themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+            }
         }
     }
 
@@ -475,9 +479,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ╔══════════════════════════════════════════════════════════════╗
     ║                        CodeGremlins                          ║
     ║                                                              ║
-    ║  👾 Welcome to the CodeGremlins website!                    ║
-    ║  🚀 Built with love by Codz & Belmont                       ║
-    ║  💻 Check out our code: github.com/CodeGremlins             ║
+    ║  </>  Welcome to the CodeGremlins website!                  ║
+    ║  🚀   Built with love by Codz & Belmont                     ║
+    ║  💻   Check out our code: github.com/CodeGremlins           ║
     ║                                                              ║
     ║  Interested in collaborating? Get in touch!                 ║
     ╚══════════════════════════════════════════════════════════════╝
