@@ -1,0 +1,15 @@
+---
+const links = [
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#team', label: 'Team' }
+];
+---
+<nav class="navbar">
+  <div class="nav-inner container">
+    <div class="nav-logo">CodeGremlins <i class="fas fa-code" aria-hidden="true"></i></div>
+    <ul class="nav-links">
+      {links.map(l => <li><a href={l.href}>{l.label}</a></li>)}
+    </ul>
+  </div>
+</nav>

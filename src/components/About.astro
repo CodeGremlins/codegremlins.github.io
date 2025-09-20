@@ -1,0 +1,47 @@
+---
+// Minimal data sets (reduced & concise)
+// Paired value + stat rows for inline alignment
+const valueStats = [
+  {
+    icon: 'fa-gauge-high',
+    title: 'ESX-First Mindset',
+    body: 'Exclusive ESX Legacy focus: lean scripts, profiled events, measurable performance.',
+    stat: { v: '50+', l: 'Projects' }
+  },
+  {
+    icon: 'fa-shield-halved',
+    title: 'OX Integration',
+    body: 'Native compatibility with ox_lib, ox_inventory, ox_target.',
+    stat: { v: '24/7', l: 'Support' }
+  },
+  {
+    icon: 'fa-layer-group',
+    title: 'UI Discipline',
+    body: 'No fluff. Fast to scan. Easy to act.',
+    stat: { v: '0', l: 'Downtime Goal' }
+  }
+];
+---
+<section id="about" class="about minimal">
+  <div class="container">
+    <header class="about-head anim-fade-up">
+      <h2 class="about-title">About CodeGremlins</h2>
+      <p class="about-tag">Focused ESX Legacy engineering. Lean, profiled, dependable.</p>
+    </header>
+
+    <div class="about-summary-card anim-fade-up">
+      <p class="about-summary">We engineer ESX Legacy resources with an uncompromising focus on performance clarity and stability. Every line is profiled, versioned, and built for long-term maintainability.</p>
+    </div>
+
+    <div class="value-stat-grid anim-fade-up">
+      {valueStats.map(row => (
+        <div class="value-row">
+          <div class="value-item"><i class={`fas ${row.icon}`}></i><div class="value-copy"><strong class="value-title">{row.title}</strong><span class="value-body">{row.body}</span></div></div>
+          <div class="stat"><span class="stat-val">{row.stat.v}</span><span class="stat-label">{row.stat.l}</span></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Process & CTA removed as requested -->
+  </div>
+</section>

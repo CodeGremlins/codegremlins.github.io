@@ -1,0 +1,28 @@
+---
+// Simple Linux styled terminal demo with typing targets
+const lines = [
+  { type: 'cmd', prompt: 'codegremlins@fivem:~$ ', text: 'ls resources' },
+  { type: 'out', text: 'esx_core  inventory  banking  jobs  ui' },
+  { type: 'cmd', prompt: 'codegremlins@fivem:~$ ', text: './optimize --resource esx_core' },
+  { type: 'progress', text: 'Optimizing...' },
+  { type: 'out', text: 'done (42ms)' },
+  { type: 'cmd', prompt: 'codegremlins@fivem:~$ ', text: 'deploy --target production' },
+  { type: 'success', text: 'Deploy complete ✔' }
+];
+---
+<div class="terminal-demo anim-fade-up" data-terminal>
+  <div class="terminal-window">
+    <div class="terminal-header">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="terminal-title">CodeGremlins</span>
+    </div>
+    <div class="terminal-body" id="terminal-body">
+      {lines.map((line, i) => (
+        <div class={`terminal-line line-${line.type}`} data-line={i} data-type={line.type} data-text={line.text} data-prompt={line.prompt || ''} style="display:none"></div>
+      ))}
+      <div class="terminal-cursor" aria-hidden="true"></div>
+    </div>
+  </div>
+</div>

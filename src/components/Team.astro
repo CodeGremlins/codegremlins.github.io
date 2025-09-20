@@ -1,0 +1,64 @@
+---
+const members = [
+  {
+    name: 'Codz',
+    role: 'ESX Developer & Co-Founder',
+    description: 'Specializes in complex ESX Legacy resource development with expertise in Lua scripting and performance optimization for FiveM servers.',
+    skills: ['Lua','ESX Legacy','MySQL','Performance Optimization'],
+    avatar: '/avatars/codz.png',
+    location: 'EU',
+    socials: [
+      { type: 'github', url: 'https://github.com/codzofficial' },
+      { type: 'discord', url: 'https://discord.gg/yourinvite' }
+    ]
+  },
+  {
+    name: 'Belmont',
+    role: 'ESX Developer & Co-Founder',
+    description: 'Focuses on ESX Legacy framework development with advanced database integration and modern UI/UX design for roleplay servers.',
+    skills: ['ESX Legacy','JavaScript','MariaDB','UI/UX Design'],
+    avatar: '/avatars/belmont.png',
+    location: 'US',
+    socials: [
+      { type: 'github', url: 'https://github.com/belmont0101' }
+    ]
+  }
+];
+---
+<section id="team" class="team">
+  <div class="container">
+    <div class="section-header anim-fade-up">
+      <h2 class="section-title">Our Team</h2>
+      <p class="section-subtitle">Experienced ESX Legacy developers</p>
+    </div>
+    <div class="team-grid anim-fade-up" role="list">
+      {members.map((m, idx) => (
+        <article class="member-card anim-fade-up" style={{ '--anim-order': idx }} role="listitem">
+          <header class="member-header">
+            <div class="avatar-wrap" aria-hidden={m.avatar ? 'false':'true'}>
+              {m.avatar ? <img src={m.avatar} alt={m.name + ' avatar'} loading="lazy" decoding="async" /> : <div class="avatar-fallback">{m.name[0]}</div>}
+            </div>
+            <div class="member-headings">
+              <h3 class="member-name">{m.name}</h3>
+              <p class="member-role">{m.role}</p>
+            </div>
+          </header>
+          <p class="member-desc">{m.description}</p>
+          <ul class="skill-tags" aria-label={m.name + ' key skills'}>
+            {m.skills.map(s => <li class="skill-tag">{s}</li>)}
+          </ul>
+          {m.socials && m.socials.length && (
+            <div class="member-links" aria-label={m.name + ' social links'}>
+              {m.socials.map(s => (
+                <a href={s.url} class={`social-link social-${s.type}`} aria-label={m.name + ' ' + s.type} target="_blank" rel="noopener noreferrer">
+                  {s.type === 'github' && <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.3 1.19-3.11-.12-.29-.52-1.45.11-3.02 0 0 .97-.31 3.18 1.19a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.5 3.17-1.19 3.17-1.19.63 1.57.23 2.73.11 3.02.74.81 1.18 1.85 1.18 3.11 0 4.43-2.69 5.41-5.25 5.69.42.36.79 1.07.79 2.16 0 1.56-.02 2.82-.02 3.2 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>}
+                  {s.type === 'discord' && <svg width="18" height="18" viewBox="0 0 245 240" aria-hidden="true"><path fill="currentColor" d="M104.4 104.9c-5.7 0-10.2 5  -10.2 11.1 0 6.1 4.6 11.1 10.2 11.1 5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zm36.2 0c-5.7 0-10.2 5-10.2 11.1 0 6.1 4.6 11.1 10.2 11.1 5.7 0 10.2-5 10.2-11.1 0-6.1-4.5-11.1-10.2-11.1z"/><path fill="currentColor" d="M189.5 20h-134C44.2 20 36 28.2 36 38.6v135.2c0 10.4 8.2 18.6 18.3 18.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V38.6c0-10.4-8.2-18.6-18.3-18.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.2-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-5.9 22.7-6.2.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z"/></svg>}
+                </a>
+              ))}
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
