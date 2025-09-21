@@ -1,13 +1,20 @@
 ---
+// Primary navigation links (hash anchors to sections)
 const links = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
+  { href: '#repos', label: 'Repos' },
   { href: '#team', label: 'Team' }
 ];
 ---
-<nav class="navbar">
+<nav class="navbar" role="navigation" aria-label="Main">
   <div class="nav-inner container">
-    <div class="nav-logo">CodeGremlins <i class="fas fa-code" aria-hidden="true"></i></div>
+    <a href="#home" class="nav-logo" aria-label="CodeGremlins home">
+      <span class="nav-logo-icon">
+        <img src="/favicon.svg" alt="" />
+      </span>
+      <span class="nav-logo-text">CodeGremlins</span>
+    </a>
     <ul class="nav-links">
       {links.map(l => <li><a href={l.href}>{l.label}</a></li>)}
     </ul>

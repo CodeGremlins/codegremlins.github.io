@@ -1,0 +1,87 @@
+---
+// Curated repository showcase (static for now; can be swapped for GitHub API fetch later)
+// Keep list focused: only high-signal ESX/Overextended related repos
+interface RepoItem {
+  name: string;
+  slug: string; // GitHub repo slug after org/user
+  description: string;
+  stack: string[]; // short tech tags
+  status?: string; // optional label like 'alpha', 'stable'
+}
+
+const org = 'CodeGremlins';
+
+const repos: RepoItem[] = [
+  {
+    name: 'Server Files',
+    slug: 'server-files',
+    description: 'A plug-and-play FiveM server base with all the essential files ready to run out of the box.',
+    stack: ['ESX', 'Overextended'],
+    status: 'wip'
+  },
+  {
+    name: 'cg-blackmarket',
+    slug: 'cg-blackmarket',
+    description: 'Configurable ESX black market: timed restocks, licenses, multi-currency, tablet or context UI.',
+    stack: ['ESX', 'Lua', 'ox_target', 'oxmysql', 'ox_inventory', 'ox_lib', 'UI'],
+    status: 'beta'
+  },
+  {
+    name: 'inventory-tailor',
+    slug: 'inventory-tailor',
+    description: 'Extend ox_inventory with scoped recipe & modifier hooks.',
+    stack: ['ox_inventory', 'Lua'],
+    status: 'wip'
+  },
+  {
+    name: 'target-zones-lite',
+    slug: 'target-zones-lite',
+    description: 'Tiny zone utility for ox_target with pooled poly + sphere helpers.',
+    stack: ['ox_target', 'Lua'],
+    status: 'stable'
+  },
+  {
+    name: 'rp-utils-pack',
+    slug: 'rp-utils-pack',
+    description: 'Small bundle: logging, player meta helpers, safe exports.',
+    stack: ['ESX', 'Lua'],
+  }
+];
+---
+<section id="repos" class="repos">
+  <div class="container">
+    <header class="section-header anim-fade-up">
+      <h2 class="section-title with-underline">Repositories</h2>
+      <p class="section-subtitle">Selected ESX / Overextended focused modules.</p>
+    </header>
+
+    <div class="repos-grid">
+      {repos.map((r, i) => {
+        // Using org repositories listing URL per request
+        const url = `https://github.com/orgs/${org}/repositories`; 
+        return (
+          <article class="repo-card anim-fade-up" style={`animation-delay:${i * 70}ms`}>
+            <div class="repo-head">
+              <h3 class="repo-name"><a href={url} target="_blank" rel="noopener" aria-label={`Open ${r.name} on GitHub`}>{r.name}</a></h3>
+              {r.status && <span class={`repo-status status-${r.status}`}>{r.status}</span>}
+            </div>
+            <p class="repo-desc">{r.description}</p>
+            <ul class="repo-tags" aria-label="Tech stack">
+              {r.stack.map(tag => <li class="repo-tag">{tag}</li>)}
+            </ul>
+            <div class="repo-actions">
+              <a class="repo-link" href={url} target="_blank" rel="noopener" aria-label={`View ${r.name} repository on GitHub`}>
+                <span>GitHub</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 14v7h-7"/><path d="M3 10 14 21"/></svg>
+              </a>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <div class="repos-cta anim-fade-up" style="animation-delay:450ms">
+      <a href={`https://github.com/orgs/${org}/repositories`} target="_blank" rel="noopener" class="btn btn-secondary" aria-label="Browse all repositories on GitHub">Browse all on GitHub →</a>
+    </div>
+  </div>
+</section>
