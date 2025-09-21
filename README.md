@@ -42,6 +42,21 @@ Outputs static site to `dist/`.
 npm run preview
 ```
 
+Or build then serve the generated `dist/` folder directly:
+
+```bash
+npm run preview:build   # build + preview in one
+npm run serve:dist      # static file server (after a prior build)
+```
+
+### Why opening dist/index.html directly looks unstyled
+
+If you double‑click `dist/index.html` you load it with a `file://` URL. The built HTML references its stylesheet at an absolute path like `/_astro/index.[hash].css`. Under `file://`, that absolute path does not point into your `dist` folder, so the CSS fails to load and the page appears unstyled with missing icons. Use one of the preview commands above (which serves the site at `/`) or deploy it.
+
+### Font Awesome
+
+We switched from the JavaScript loader to the pure CSS include for faster first paint and fewer render flashes. If you need dynamic icon features later, you can reintroduce the JS kit.
+
 ## Deployment
 
 GitHub Actions workflow `.github/workflows/deploy.yml` builds and deploys automatically on pushes to `main`.

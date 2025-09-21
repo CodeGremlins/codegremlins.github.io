@@ -6,6 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "preview:build": "npm run build && npm run preview",
+    "serve:dist": "npx serve dist",
+    "build:relative": "npm run build && node scripts/make-relative.mjs",
     "astro": "astro"
   },
   "dependencies": {
