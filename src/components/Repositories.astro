@@ -23,14 +23,14 @@ const repos: RepoItem[] = [
     name: 'cg-blackmarket',
     slug: 'cg-blackmarket',
     description: 'Configurable ESX black market: timed restocks, licenses, multi-currency, tablet or context UI.',
-    stack: ['ESX', 'Lua', 'ox_target', 'oxmysql', 'ox_inventory', 'ox_lib', 'UI'],
+    stack: ['ESX', 'Lua', 'Overextended', 'UI'],
     status: 'beta'
   },
   {
-    name: 'inventory-tailor',
-    slug: 'inventory-tailor',
-    description: 'Extend ox_inventory with scoped recipe & modifier hooks.',
-    stack: ['ox_inventory', 'Lua'],
+    name: 'cgAdmin',
+    slug: 'cgadmin',
+    description: 'Lightweight in-game admin menu inspired by txAdmin: moderation tools, player actions, server controls.',
+    stack: ['UI', 'Lua'],
     status: 'wip'
   },
   {
@@ -38,13 +38,14 @@ const repos: RepoItem[] = [
     slug: 'target-zones-lite',
     description: 'Tiny zone utility for ox_target with pooled poly + sphere helpers.',
     stack: ['ox_target', 'Lua'],
-    status: 'stable'
+    status: 'NOT IN WORK'
   },
   {
     name: 'rp-utils-pack',
     slug: 'rp-utils-pack',
     description: 'Small bundle: logging, player meta helpers, safe exports.',
     stack: ['ESX', 'Lua'],
+    status: 'NOT IN WORK'
   }
 ];
 ---
@@ -52,7 +53,6 @@ const repos: RepoItem[] = [
   <div class="container">
     <header class="section-header anim-fade-up">
       <h2 class="section-title with-underline">Repositories</h2>
-      <p class="section-subtitle">Selected ESX / Overextended focused modules.</p>
     </header>
 
     <div class="repos-grid">
