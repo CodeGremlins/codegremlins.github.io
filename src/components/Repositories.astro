@@ -41,11 +41,11 @@ const repos: RepoItem[] = [
     status: 'wip'
   },
   {
-    name: 'rp-utils-pack',
-    slug: 'rp-utils-pack',
-    description: 'Small bundle: logging, player meta helpers, safe exports.',
-    stack: ['ESX', 'Lua'],
-    status: 'NOT IN WORK'
+    name: 'cg-streetracing',
+    slug: 'cg-streetracing',
+    description: 'Immersive street racing framework for roleplay: custom route builder, dynamic checkpoints, heat/reputation system, leaderboards, escrow wagers, vehicle class limits, anti-ghosting, spectator cams, persistent stats.',
+    stack: ['ESX', 'UI', 'Lua'],
+    status: 'wip'
   }
 ];
 ---
@@ -58,7 +58,7 @@ const repos: RepoItem[] = [
     <div class="repos-grid">
       {repos.map((r, i) => {
         // Using org repositories listing URL per request
-        const url = `https://github.com/orgs/${org}/repositories`; 
+        const url = `https://github.com/${org}/${r.slug}`; 
         return (
           <article class="repo-card anim-fade-up" style={`animation-delay:${i * 70}ms`}>
             <div class="repo-head">
