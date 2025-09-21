@@ -3,7 +3,7 @@ const members = [
   {
     name: 'Codz',
     role: 'ESX Developer & Co-Founder',
-    description: 'Specializes in complex ESX Legacy resource development with expertise in Lua scripting and performance optimization for FiveM servers.',
+  description: 'Focuses on crafting clean ESX Legacy scripts.',
     skills: ['Lua','ESX Legacy','MySQL','Performance Optimization'],
     avatar: '/avatars/codz.png',
     location: 'DK',
@@ -15,7 +15,7 @@ const members = [
   {
     name: 'Belmont',
     role: 'ESX Developer & Co-Founder',
-    description: 'Focuses on ESX Legacy framework development with advanced database integration and modern UI/UX design for roleplay servers.',
+  description: 'Focuses on ESX framework integration.',
     skills: ['ESX Legacy','JavaScript','MariaDB','UI/UX Design'],
     avatar: '/avatars/belmont.png',
     location: 'DK',
@@ -24,6 +24,26 @@ const members = [
     ]
   }
 ];
+
+// Country code helpers
+const countryNames = {
+  DK: 'Denmark',
+  US: 'United States',
+  GB: 'United Kingdom',
+  DE: 'Germany',
+  FR: 'France',
+  SE: 'Sweden',
+  NO: 'Norway',
+  NL: 'Netherlands',
+  ES: 'Spain',
+  IT: 'Italy',
+  CA: 'Canada'
+};
+
+function codeToFlag(code){
+  if(!code || code.length !== 2) return '';
+  return code.toUpperCase().replace(/./g, c => String.fromCodePoint(127397 + c.charCodeAt(0)));
+}
 ---
 <section id="team" class="team">
   <div class="container">
@@ -42,9 +62,9 @@ const members = [
               <h3 class="member-name">{m.name}</h3>
               <p class="member-role">{m.role}</p>
               {m.location && (
-                <p class="member-location" aria-label={m.name + ' location'}>
-                  <i class="fas fa-location-dot" aria-hidden="true"></i>
-                  <span>{m.location}</span>
+                <p class="member-location" aria-label={m.name + ' location'} title={countryNames[m.location]?.length ? countryNames[m.location] : m.location}>
+                  <span class="flag" aria-hidden="true">{codeToFlag(m.location)}</span>
+                  <span class="loc-text">{m.location}</span>
                 </p>
               )}
             </div>
