@@ -24,6 +24,13 @@ const repos: RepoItem[] = [
     slug: 'cg-blackmarket',
     description: 'Configurable ESX black market: timed restocks, licenses, multi-currency, tablet or context UI.',
     stack: ['ESX', 'Lua', 'Overextended', 'UI'],
+    status: 'stable'
+  },
+  {
+    name: 'cg-hud',
+    slug: 'cg-hud',
+    description: 'Modular HUD for ESX/Overextended: status bars, speedometer, compass.',
+    stack: ['UI', 'ESX', 'Lua', 'ox_lib'],
     status: 'beta'
   },
   {
@@ -31,7 +38,7 @@ const repos: RepoItem[] = [
     slug: 'cgadmin',
     description: 'Lightweight in-game admin menu inspired by txAdmin: moderation tools, player actions, server controls.',
     stack: ['UI', 'Lua'],
-    status: 'wip'
+    status: 'beta'
   },
   {
     name: 'cg-boosting',
@@ -46,6 +53,13 @@ const repos: RepoItem[] = [
     description: 'Immersive street racing framework for roleplay: custom route builder, dynamic checkpoints, heat/reputation system, leaderboards, escrow wagers, vehicle class limits, anti-ghosting, spectator cams, persistent stats.',
     stack: ['ESX', 'UI', 'Lua'],
     status: 'wip'
+  },
+  {
+    name: 'cg-lockpick',
+    slug: 'cg-lockpick',
+    description: 'Simple lightweight vehicle lockpick system using ox_target, ox_lib and ESX inventory (ox_inventory). Now includes a fully custom NUI lockpick minigame with tool tiers.',
+    stack: ['Lua', 'ESX', 'Minigame UI'],
+    status: 'beta'
   }
 ];
 ---
