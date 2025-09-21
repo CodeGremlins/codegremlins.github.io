@@ -1,5 +1,9 @@
 ---
-const { title = 'CodeGremlins - ESX Legacy FiveM Development', description = 'Professional ESX Legacy resource development for FiveM roleplay servers.' } = Astro.props;
+// Default metadata (can be overridden per page via <Layout title="..." description="...">)
+const { 
+  title = 'CodeGremlins', 
+  description = 'We mostly work on developing ESX scripts, and it’s what we enjoy the most.' 
+} = Astro.props;
 // Import global stylesheet so Astro/Vite bundles & optimizes it (instead of linking to /src path)
 import '../styles/global.css';
 ---
@@ -15,11 +19,11 @@ import '../styles/global.css';
   <!-- Font Awesome (CSS only). Integrity hash corrected; matches cdnjs published asset. -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   {/** global.css is imported above so the bundler will emit a versioned CSS asset */}
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
     <div id="scroll-progress" role="progressbar" aria-label="Scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
     <slot />
-  <script src="scripts/animations.js" defer></script>
+    <script src="/scripts/animations.js" defer></script>
   </body>
 </html>

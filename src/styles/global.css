@@ -144,6 +144,8 @@ section { padding: var(--spacing-3xl) 0; }
 .member-headings { display:flex; flex-direction:column; gap:.25rem; }
 .member-name { font-size:1.15rem; font-weight:600; letter-spacing:.02em; }
 .member-role { color: var(--primary-color); font-size:.8rem; font-weight:500; letter-spacing:.05em; text-transform:uppercase; }
+.member-location { display:flex; align-items:center; gap:.4rem; font-size:.65rem; letter-spacing:.08em; text-transform:uppercase; color: var(--text-light); font-weight:600; margin-top:2px; opacity:.85; }
+.member-location i { color: var(--primary-color); font-size:.7rem; filter: drop-shadow(0 0 4px rgba(59,130,246,0.5)); }
 .member-desc { color: var(--text-secondary); font-size:.85rem; line-height:1.55; }
 .skill-tags { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:.45rem; }
 .skill-tag { background: rgba(255,255,255,0.06); padding:.4rem .7rem; border-radius: 999px; font-size:.6rem; letter-spacing:.08em; font-weight:600; color: var(--text-secondary); text-transform:uppercase; position:relative; overflow:hidden; }

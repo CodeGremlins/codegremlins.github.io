@@ -5,8 +5,8 @@ const members = [
     role: 'ESX Developer & Co-Founder',
     description: 'Specializes in complex ESX Legacy resource development with expertise in Lua scripting and performance optimization for FiveM servers.',
     skills: ['Lua','ESX Legacy','MySQL','Performance Optimization'],
-  avatar: 'avatars/codz.png',
-    location: 'EU',
+    avatar: '/avatars/codz.png',
+    location: 'DK',
     socials: [
       { type: 'github', url: 'https://github.com/codzofficial' },
       { type: 'discord', url: 'https://discord.gg/yourinvite' }
@@ -17,8 +17,8 @@ const members = [
     role: 'ESX Developer & Co-Founder',
     description: 'Focuses on ESX Legacy framework development with advanced database integration and modern UI/UX design for roleplay servers.',
     skills: ['ESX Legacy','JavaScript','MariaDB','UI/UX Design'],
-  avatar: 'avatars/belmont.png',
-    location: 'US',
+    avatar: '/avatars/belmont.png',
+    location: 'DK',
     socials: [
       { type: 'github', url: 'https://github.com/belmont0101' }
     ]
@@ -41,6 +41,12 @@ const members = [
             <div class="member-headings">
               <h3 class="member-name">{m.name}</h3>
               <p class="member-role">{m.role}</p>
+              {m.location && (
+                <p class="member-location" aria-label={m.name + ' location'}>
+                  <i class="fas fa-location-dot" aria-hidden="true"></i>
+                  <span>{m.location}</span>
+                </p>
+              )}
             </div>
           </header>
           <p class="member-desc">{m.description}</p>
